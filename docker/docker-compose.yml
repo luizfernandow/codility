@@ -1,0 +1,13 @@
+version: '3'
+services:
+    php:
+        build: ./php
+        image: docker_codility/php
+        container_name: php-codility
+        volumes:
+            - "./etc/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
+            - "../.:/var/www/html"
+        networks:
+            - codility
+networks:
+    codility:
